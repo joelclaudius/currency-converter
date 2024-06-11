@@ -36,7 +36,6 @@ const App = () => {
           if (!res.ok) throw new Error("Error fetching currency data");
 
           const data = await res.json();
-          console.log(data);
 
           if (data.rates && data.rates[countryB]) {
             setOutput(data.rates[countryB] * currency); // Calculate the converted amount
