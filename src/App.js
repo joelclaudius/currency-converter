@@ -38,7 +38,7 @@ const App = () => {
           const data = await res.json();
 
           if (data.rates && data.rates[countryB]) {
-            setOutput(data.rates[countryB] * currency); // Calculate the converted amount
+            setOutput(data.rates[countryB]); // Calculate the converted amount
           } else {
             setOutput("Conversion rate not available.");
           }
@@ -54,28 +54,28 @@ const App = () => {
   }, [currency, countryA, countryB]); // Dependencies: re-fetch on change
 
   return (
-    <div className="px-20 py-10 sm:px-[20px] md:px-[240px] lg:px-[400px]">
+    <div className="px-20 lg:pt-[200px] lg:pb-[400px] pt-20 pb-[300px] sm:px-[20px] md:px-[240px] lg:px-[400px]">
       <h1 className="text-3xl font-bold text-blue-700 flex justify-center mb-6">
         Currency Calculator
       </h1>
       <div className="flex justify-center gap-10">
         <div className="">
-          <h3 className="font-bold mb-3">AMOUNT</h3>
+          <h3 className="font-bold mb-3 text-2xl">AMOUNT</h3>
           <input
             type="number" // Use number input for currency amount
             placeholder="Amount"
             value={currency}
             onChange={(e) => setCurrency(e.target.value)}
-            className=" w-[80px]"
+            className=" w-[80px] bg-blue-700 text-white rounded-md p-2"
           />
         </div>
 
         <div className="">
-          <h3 className="font-bold mb-3">FROM</h3>
+          <h3 className="font-bold mb-3 text-2xl">FROM</h3>
           <select
             value={countryA}
             onChange={(e) => setCountryA(e.target.value)}
-            className="w-[80px]"
+            className=" w-[80px] bg-blue-700 text-white rounded-md p-2"
           >
             <option value="USD">USD</option>
             <option value="EUR">EUR</option>
@@ -85,11 +85,11 @@ const App = () => {
         </div>
 
         <div className="">
-          <h3 className="font-bold mb-3">TO</h3>
+          <h3 className="font-bold mb-3 text-2xl">TO</h3>
           <select
             value={countryB}
             onChange={(e) => setCountryB(e.target.value)}
-            className="w-[80px]"
+            className=" w-[80px] bg-blue-700 text-white rounded-md p-2"
           >
             <option value="USD">USD</option>
             <option value="EUR">EUR</option>
@@ -99,7 +99,7 @@ const App = () => {
         </div>
       </div>
 
-      <div className="flex justify-center font-bold text-2xl text-blue-700 mt-6">
+      <div className="flex justify-center font-bold text-4xl text-blue-700 mt-6">
         {loading ? (
           <Loader /> // Display loader when fetching data
         ) : error ? (
