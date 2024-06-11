@@ -54,11 +54,11 @@ const App = () => {
   }, [currency, countryA, countryB]); // Dependencies: re-fetch on change
 
   return (
-    <div className="px-20 py-10 sm:px-[160px] md:px-[240px]">
-      <h1 className="text-3xl font-bold text-blue-700 flex justify-center">
+    <div className="px-20 py-10 sm:px-[20px] md:px-[240px] lg:px-[400px]">
+      <h1 className="text-3xl font-bold text-blue-700 flex justify-center mb-6">
         Currency Calculator
       </h1>
-      <div className="grid grid-cols-3 gap-10 py-6 px-2 ">
+      <div className="flex justify-center gap-10">
         <div className="">
           <h3 className="font-bold mb-3">AMOUNT</h3>
           <input
@@ -99,7 +99,7 @@ const App = () => {
         </div>
       </div>
 
-      <div className="flex justify-center font-bold text-2xl text-blue-700">
+      <div className="flex justify-center font-bold text-2xl text-blue-700 mt-6">
         {loading ? (
           <Loader /> // Display loader when fetching data
         ) : error ? (
