@@ -54,23 +54,28 @@ const App = () => {
   }, [currency, countryA, countryB]); // Dependencies: re-fetch on change
 
   return (
-    <div>
-      <div>
-        <div>
-          <h3>AMOUNT</h3>
+    <div className="px-20 py-10 sm:px-[160px] md:px-[240px]">
+      <h1 className="text-3xl font-bold text-blue-700 flex justify-center">
+        Currency Calculator
+      </h1>
+      <div className="grid grid-cols-3 gap-10 py-6 px-2 ">
+        <div className="">
+          <h3 className="font-bold mb-3">AMOUNT</h3>
           <input
             type="number" // Use number input for currency amount
-            placeholder="Enter amount"
+            placeholder="Amount"
             value={currency}
             onChange={(e) => setCurrency(e.target.value)}
+            className=" w-[80px]"
           />
         </div>
 
-        <div>
-          <h3>FROM</h3>
+        <div className="">
+          <h3 className="font-bold mb-3">FROM</h3>
           <select
             value={countryA}
             onChange={(e) => setCountryA(e.target.value)}
+            className="w-[80px]"
           >
             <option value="USD">USD</option>
             <option value="EUR">EUR</option>
@@ -79,11 +84,12 @@ const App = () => {
           </select>
         </div>
 
-        <div>
-          <h3>TO</h3>
+        <div className="">
+          <h3 className="font-bold mb-3">TO</h3>
           <select
             value={countryB}
             onChange={(e) => setCountryB(e.target.value)}
+            className="w-[80px]"
           >
             <option value="USD">USD</option>
             <option value="EUR">EUR</option>
@@ -93,7 +99,7 @@ const App = () => {
         </div>
       </div>
 
-      <div>
+      <div className="flex justify-center font-bold text-2xl text-blue-700">
         {loading ? (
           <Loader /> // Display loader when fetching data
         ) : error ? (
@@ -105,7 +111,7 @@ const App = () => {
             <p>{output}</p> // Display any other message
           )
         ) : (
-          <p>Please enter amount and select currencies</p> // Prompt for input
+          <p>OUTPUT</p> // Prompt for input
         )}
       </div>
     </div>
