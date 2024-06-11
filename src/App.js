@@ -56,24 +56,43 @@ const App = () => {
 
   return (
     <div>
-      <input
-        type="number" // Use number input for currency amount
-        placeholder="Enter amount"
-        value={currency}
-        onChange={(e) => setCurrency(e.target.value)}
-      />
-      <select value={countryA} onChange={(e) => setCountryA(e.target.value)}>
-        <option value="USD">USD</option>
-        <option value="EUR">EUR</option>
-        <option value="CAD">CAD</option>
-        <option value="INR">INR</option>
-      </select>
-      <select value={countryB} onChange={(e) => setCountryB(e.target.value)}>
-        <option value="USD">USD</option>
-        <option value="EUR">EUR</option>
-        <option value="CAD">CAD</option>
-        <option value="INR">INR</option>
-      </select>
+      <div>
+        <div>
+          <h3>AMOUNT</h3>
+          <input
+            type="number" // Use number input for currency amount
+            placeholder="Enter amount"
+            value={currency}
+            onChange={(e) => setCurrency(e.target.value)}
+          />
+        </div>
+
+        <div>
+          <h3>FROM</h3>
+          <select
+            value={countryA}
+            onChange={(e) => setCountryA(e.target.value)}
+          >
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="CAD">CAD</option>
+            <option value="INR">INR</option>
+          </select>
+        </div>
+
+        <div>
+          <h3>TO</h3>
+          <select
+            value={countryB}
+            onChange={(e) => setCountryB(e.target.value)}
+          >
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="CAD">CAD</option>
+            <option value="INR">INR</option>
+          </select>
+        </div>
+      </div>
 
       <div>
         {loading ? (
