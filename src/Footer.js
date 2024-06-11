@@ -93,7 +93,7 @@ const Footer = () => {
           <div className="col-span-2">
             <button
               type="submit"
-              className="font-display bg-blue-800 text-white rounded-full p-2 border-2 font-bold"
+              className="font-display bg-footer-color text-black rounded-md p-2 border-2 border-black font-bold"
             >
               Submit
             </button>

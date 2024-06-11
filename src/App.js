@@ -54,7 +54,7 @@ const App = () => {
   }, [currency, countryA, countryB]); // Dependencies: re-fetch on change
 
   return (
-    <div className="px-20 lg:pt-[200px] lg:pb-[400px] pt-20 pb-[300px] sm:px-[20px] md:px-[240px] lg:px-[400px]">
+    <div className="px-20 lg:pt-[150px] lg:pb-[400px] pt-20 pb-[300px] sm:px-[20px] md:px-[240px] lg:px-[400px]">
       <h1 className="text-3xl font-bold text-blue-700 flex justify-center mb-6">
         Currency Calculator
       </h1>
