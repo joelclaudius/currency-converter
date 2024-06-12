@@ -150,12 +150,14 @@ const App = () => {
           <ErrorMessage message={error} /> // Display error message if there's an error
         ) : output !== null ? (
           typeof output === "number" ? (
-            <p>{output.toFixed(2)}</p> // Display the converted amount
+            <p>
+              {output.toFixed(2)} {countryB}
+            </p> // Display the converted amount
           ) : (
             <p>{output}</p> // Display any other message
           )
         ) : (
-          <p>OUTPUT</p> // Prompt for input
+          <p>Enter amount to convert</p> // Prompt for input
         )}
       </div>
     </div>
