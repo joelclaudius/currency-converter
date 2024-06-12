@@ -37,6 +37,10 @@ const App = () => {
 
           const data = await res.json();
 
+          const res1 = await fetch(`https://api.frankfurter.app/currencies`);
+          const data1 = await res1.json();
+          console.log(data1);
+
           if (data.rates && data.rates[countryB]) {
             setOutput(data.rates[countryB]); // Calculate the converted amount
           } else {
@@ -60,7 +64,7 @@ const App = () => {
   }, [currency, countryA, countryB]); // Dependencies: re-fetch on change
 
   return (
-    <div className="px-20 lg:pt-[150px] lg:pb-[400px] pt-20 pb-[300px] sm:px-[20px] md:px-[240px] lg:px-[400px]">
+    <div className="px-2 lg:pt-[150px] lg:pb-[400px] pt-20 pb-[300px] sm:px-[20px] md:px-[240px] lg:px-[400px]">
       <h1 className="sm:text-3xl text-2xl font-bold text-blue-700 flex justify-center mb-6">
         Currency Calculator
       </h1>
@@ -72,7 +76,7 @@ const App = () => {
             placeholder="Amount"
             value={currency}
             onChange={(e) => setCurrency(e.target.value)}
-            className=" w-[80px] bg-blue-700 text-white rounded-md p-2"
+            className=" w-full bg-blue-700 text-white rounded-md p-2"
           />
         </div>
 
@@ -81,12 +85,29 @@ const App = () => {
           <select
             value={countryA}
             onChange={(e) => setCountryA(e.target.value)}
-            className=" w-[80px] bg-blue-700 text-white rounded-md p-2"
+            className=" w-full bg-blue-700 text-white rounded-md p-2"
           >
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-            <option value="CAD">CAD</option>
-            <option value="INR">INR</option>
+            <option value="USD">United States Dollar</option>
+            <option value="EUR">Euro</option>
+            <option value="CAD">Canadian Dollar</option>
+            <option value="INR">Indian Rupee</option>
+            <option value="AUD">Australian Dollar</option>
+            <option value="BGN">Bulgarian Lev</option>
+            <option value="BRL">Brazilian Real</option>
+            <option value="CHF">Swiss Franc</option>
+            <option value="CNY">Chinese Renminbi Yuan</option>
+            <option value="CZK">Czech Koruna</option>
+            <option value="DKK">Danish Krone</option>
+            <option value="GBP">British Pound</option>
+            <option value="HKD">Hong Kong Dollar</option>
+            <option value="HUF">Hungarian Forint</option>
+            <option value="IDR">Indonesian Rupiah</option>
+            <option value="ILS">Israeli New Sheqel</option>
+            <option value="ISK">Icelandic Króna</option>
+            <option value="JPY">Japanese Yen</option>
+            <option value="KRW">South Korean Won</option>
+            <option value="MXN">Mexican Peso</option>
+            <option value="MYR">Malaysian Ringgit</option>
           </select>
         </div>
 
@@ -95,12 +116,29 @@ const App = () => {
           <select
             value={countryB}
             onChange={(e) => setCountryB(e.target.value)}
-            className=" w-[80px] bg-blue-700 text-white rounded-md p-2"
+            className=" w-full bg-blue-700 text-white rounded-md p-2"
           >
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-            <option value="CAD">CAD</option>
-            <option value="INR">INR</option>
+            <option value="USD">United States Dollar</option>
+            <option value="EUR">Euro</option>
+            <option value="CAD">Canadian Dollar</option>
+            <option value="INR">Indian Rupee</option>
+            <option value="AUD">Australian Dollar</option>
+            <option value="BGN">Bulgarian Lev</option>
+            <option value="BRL">Brazilian Real</option>
+            <option value="CHF">Swiss Franc</option>
+            <option value="CNY">Chinese Renminbi Yuan</option>
+            <option value="CZK">Czech Koruna</option>
+            <option value="DKK">Danish Krone</option>
+            <option value="GBP">British Pound</option>
+            <option value="HKD">Hong Kong Dollar</option>
+            <option value="HUF">Hungarian Forint</option>
+            <option value="IDR">Indonesian Rupiah</option>
+            <option value="ILS">Israeli New Sheqel</option>
+            <option value="ISK">Icelandic Króna</option>
+            <option value="JPY">Japanese Yen</option>
+            <option value="KRW">South Korean Won</option>
+            <option value="MXN">Mexican Peso</option>
+            <option value="MYR">Malaysian Ringgit</option>
           </select>
         </div>
       </div>
