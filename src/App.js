@@ -51,6 +51,12 @@ const App = () => {
     };
 
     fetchCurrency();
+
+    return () => {
+      setOutput(null);
+      setLoading(false);
+      setError(null);
+    };
   }, [currency, countryA, countryB]); // Dependencies: re-fetch on change
 
   return (
