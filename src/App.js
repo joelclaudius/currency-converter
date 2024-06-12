@@ -37,9 +37,9 @@ const App = () => {
 
           const data = await res.json();
 
-          const res1 = await fetch(`https://api.frankfurter.app/currencies`);
-          const data1 = await res1.json();
-          console.log(data1);
+          // const res1 = await fetch(`https://api.frankfurter.app/currencies`);
+          // const data1 = await res1.json();
+          // console.log(data1);
 
           if (data.rates && data.rates[countryB]) {
             setOutput(data.rates[countryB]); // Calculate the converted amount
@@ -143,14 +143,14 @@ const App = () => {
         </div>
       </div>
 
-      <div className="flex justify-center font-bold text-4xl text-blue-700 mt-6">
+      <div className="flex justify-center font-bold text-2xl text-blue-700 mt-6">
         {loading ? (
           <Loader /> // Display loader when fetching data
         ) : error ? (
           <ErrorMessage message={error} /> // Display error message if there's an error
         ) : output !== null ? (
           typeof output === "number" ? (
-            <p>
+            <p className="text-4xl">
               {output.toFixed(2)} {countryB}
             </p> // Display the converted amount
           ) : (
