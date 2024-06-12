@@ -55,7 +55,7 @@ const App = () => {
 
   return (
     <div className="px-20 lg:pt-[150px] lg:pb-[400px] pt-20 pb-[300px] sm:px-[20px] md:px-[240px] lg:px-[400px]">
-      <h1 className="text-3xl font-bold text-blue-700 flex justify-center mb-6">
+      <h1 className="sm:text-3xl text-2xl font-bold text-blue-700 flex justify-center mb-6">
         Currency Calculator
       </h1>
       <div className="flex justify-center gap-10">
