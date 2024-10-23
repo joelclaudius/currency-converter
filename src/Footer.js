@@ -14,7 +14,6 @@ const Footer = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you can add your logic to handle the form submission, like sending the data to a backend server
     // For this example, let's just log the form data
 
     // Clear the form fields
